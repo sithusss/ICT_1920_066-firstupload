@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Switching</title>
+
+    <style>
+      .form {
+        display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="form1Btn">Form 1</button>
+    <button id="form2Btn">Form 2</button>
+    <button id="form3Btn">Form 3</button>
+
+    <form id="form1" class="form">
+      <input type="text" id="nic" name="nic" placeholder="NIC number..">
+      <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  
+      <select id="citizen" name="citizenship" placeholder="Citizenship">
+        <option value="foreign">Foriegn</option>
+        <option value="local">Local</option>
+        
+      </select>
+      
+      <input type="date" id="bdate" name="bdate" placeholder="Booking Date..">
+      <input type="text" id="noBooking" name="no_booking" placeholder="Number of Bookings..">
+  
+      <input type="submit" name="submit" value="Place Booking">
+    </form>
+
+
+    <form id="form2" class="form">
+       <input type="text" id="nic" name="nic" placeholder="NIC number..">
+                <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+      
+                <select id="category" name="category" placeholder="Category">
+                    <option value="adult">Adult</option>
+                    <option value="toddler">Infant and toddler</option>
+                    <option value="child">Child</option>
+                    <option value="student">Student</option>
+                    
+                  </select>
+                
+                <input type="date" id="bdate" name="bdate" placeholder="Booking Date..">
+                <input type="text" id="noBooking" name="no_booking" placeholder="Number of Bookings..">
+            
+                <input type="submit" name="submit" value="Place Booking">
+    </form>
+    <form id="form3" class="form">
+      <input type="text" id="nic" name="nic" placeholder="NIC number..">
+      <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+      <input type="date" id="bdate" name="bdate" placeholder="Booking Date..">
+      <input type="text" id="noBooking" name="no_booking" placeholder="Number of Bookings..">
+  
+      <input type="submit" name="submit" value="Place Booking">
+    </form>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const form1Btn = document.getElementById("form1Btn");
+    const form2Btn = document.getElementById("form2Btn");
+    const form3Btn = document.getElementById("form3Btn");
+
+    const form1 = document.getElementById("form1");
+    const form2 = document.getElementById("form2");
+    const form3 = document.getElementById("form3");
+
+    // Show Form 1 initially
+    form1.classList.add("visible");
+
+    form1Btn.addEventListener("click", function() {
+        form1.classList.add("visible");
+        form2.classList.remove("visible");
+        form3.classList.remove("visible");
+    });
+
+    form2Btn.addEventListener("click", function() {
+        form1.classList.remove("visible");
+        form2.classList.add("visible");
+        form3.classList.remove("visible");
+    });
+
+    form3Btn.addEventListener("click", function() {
+        form1.classList.remove("visible");
+        form2.classList.remove("visible");
+        form3.classList.add("visible");
+    });
+});
+
+    </script>
+</body>
+</html>
